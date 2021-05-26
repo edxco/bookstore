@@ -1,14 +1,20 @@
 import React from 'react';
-import BooksList from './BooksList'
-import BooksForm from './BooksForm'
+import PropTypes from 'prop-types';
+import BooksList from './BookList';
+import BooksForm from './BooksForm';
 
-const App = () => {
-  return (
+const App = ({ books }) => (
+
   <div>
-    <BooksList />
+    <BooksList books={books} />
     <BooksForm />
   </div>
-  );
-}
+);
+App.propTypes = {
+  books: PropTypes.objectOf(PropTypes.array),
+};
 
+App.defaultProps = {
+  books: null,
+};
 export default App;
