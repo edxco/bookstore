@@ -7,6 +7,12 @@ This is a front-end application that will help organize and manage a bookstore. 
 [demo](https://dashboard.heroku.com/apps/nameless-dusk-00402)
 # Getting Started with Create React App
 
+## Built with
+
+- JavaScript
+- React
+- Redux
+
 
 ### `yarn start`
 
