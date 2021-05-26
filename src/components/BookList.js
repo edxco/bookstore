@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-const BooksList = ({ books }) => {
+const BooksList = ({books}) => {
   console.log(books);
   return (
 
@@ -34,6 +34,6 @@ BooksList.propTypes = {
 };
 
 // BooksList.defaultProps = {
-//   books: null,
+//   books: [],
 // };
 export default connect(mapStateToProps)(BooksList);

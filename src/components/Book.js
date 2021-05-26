@@ -8,11 +8,11 @@ const Book = ({ book }) => (
 );
 
 Book.propTypes = {
-  book: PropTypes.objectOf(PropTypes.object),
+  book: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
-Book.defaultProps = {
-  book: null,
-};
+// Book.defaultProps = {
+//   book: null,
+// };
 
 /// dudas con la 16
