@@ -1,13 +1,12 @@
 ## Bookstore
 This is a front-end application that will help organize and manage a bookstore. this app is  fast, dynamic and responsive is built with React & Redux.
 
+
+## Live demo
+
+[demo](https://dashboard.heroku.com/apps/nameless-dusk-00402)
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
 
 ### `yarn start`
 
