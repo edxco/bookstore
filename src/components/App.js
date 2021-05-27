@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import BooksList from '../containers/BookList';
-import BooksForm from '../containers/BooksForm';
+import BookForm from '../containers/BookForm';
 
 const App = ({ books }) => (
   <div>
     <BooksList books={books} />
-    <BooksForm />
+    <BookForm />
   </div>
 );
 

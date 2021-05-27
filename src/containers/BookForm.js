@@ -1,7 +1,7 @@
 import React from 'react';
 
 const booksCategories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-const BooksForm = () => (
+const BookForm = () => (
   <div>
     <form>
       <label htmlFor="title">
@@ -23,4 +23,4 @@ const BooksForm = () => (
   </div>
 );
 
-export default BooksForm;
+export default BookForm;
