@@ -11,8 +11,8 @@ const BooksList = ({ books }) => (
       <th>Title</th>
       <th>Category</th>
     </tr>
-
-    {books.books.map((book) => (
+{console.log(books)}
+    {/* {books.books.map((book) => (
 
       <tr key={book.id + 2}>
         <td key={book.id}>{book.id}</td>
@@ -20,7 +20,7 @@ const BooksList = ({ books }) => (
         <td key={book.category}>{book.category}</td>
       </tr>
 
-    ))}
+    ))} */}
 
     <tbody />
   </table>
