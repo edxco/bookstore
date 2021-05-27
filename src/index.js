@@ -8,6 +8,7 @@ import reducers from './reducers';
 import { createBook } from './actions';
 
 const store = createStore(reducers);
+
 const INITIAL_STATE = [
   { id: uniqid.process(), title: 'Edd', category: 'Biography' },
   { id: uniqid.process(), title: 'The Edd', category: 'Horror' },

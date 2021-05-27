@@ -4,15 +4,12 @@ import { connect } from 'react-redux';
 import BooksList from './BookList';
 import BooksForm from './BooksForm';
 
-const App = ({ books }) => {
-  console.log(typeof books);
-  return (
-    <div>
-      <BooksList books={books} />
-      <BooksForm />
-    </div>
-  );
-};
+const App = ({ books }) => (
+  <div>
+    <BooksList books={books} />
+    <BooksForm />
+  </div>
+);
 
 const mapStateToProps = (state) => ({ books: state.bookReducer });
 
