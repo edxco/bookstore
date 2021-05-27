@@ -1,23 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import BooksList from './BookList';
-import BooksForm from './BooksForm';
 
-const App = ({ books }) => (
+import BooksList from './containers/BookList';
+import BooksForm from './containers/BookForm';
+
+const App = () => (
   <div>
-    <BooksList books={books} />
+    <BooksList />
     <BooksForm />
   </div>
 );
 
-const mapStateToProps = (state) => ({ books: state.bookReducer });
-
-App.propTypes = {
-  books: PropTypes.objectOf(PropTypes.object),
-};
-
-App.defaultProps = {
-  books: null,
-};
-export default connect(mapStateToProps)(App);
+export default App;
