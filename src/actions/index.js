@@ -1,15 +1,11 @@
-export const createBook = (id, title, category) => ({
+export const createBook = (book) => ({
   type: 'CREATE_BOOK',
-  payload: {
-    id,
-    title,
-    category,
-  },
+  payload:
+    book,
 });
 
-export const deleteBook = (title) => ({
+export const deleteBook = (book) => ({
   type: 'DELETE_BOOK',
-  payload: {
-    title,
-  },
+  payload:
+    book,
 });

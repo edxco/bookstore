@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 const BooksList = ({ books }) => (
 
@@ -24,7 +24,7 @@ const BooksList = ({ books }) => (
     <tbody />
   </table>
 );
-const mapStateToProps = (state) => ({ books: state.books });
+// const mapStateToProps = (state) => ({ books: state.books });
 
 BooksList.propTypes = {
   books: PropTypes.objectOf(PropTypes.array).isRequired,
@@ -33,4 +33,5 @@ BooksList.propTypes = {
 // BooksList.defaultProps = {
 //   books: [],
 // };
-export default connect(mapStateToProps)(BooksList);
+// export default connect(mapStateToProps)(BooksList);
+export default BooksList;
