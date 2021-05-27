@@ -11,8 +11,7 @@ const BooksList = ({ books }) => (
       <th>Title</th>
       <th>Category</th>
     </tr>
-{console.log(books)}
-    {/* {books.books.map((book) => (
+    {books.bookReducer.map((book) => (
 
       <tr key={book.id + 2}>
         <td key={book.id}>{book.id}</td>
@@ -20,13 +19,13 @@ const BooksList = ({ books }) => (
         <td key={book.category}>{book.category}</td>
       </tr>
 
-    ))} */}
+    ))}
 
     <tbody />
   </table>
 );
 
-const mapStateToProps = (state) => ({ books: state.bookReducer });
+const mapStateToProps = (state) => ({ books: state });
 
 BooksList.propTypes = {
   books: PropTypes.objectOf(PropTypes.array).isRequired,
