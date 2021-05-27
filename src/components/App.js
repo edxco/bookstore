@@ -5,7 +5,7 @@ import BooksList from './BookList';
 import BooksForm from './BooksForm';
 
 const App = ({ books }) => {
-  console.log(books);
+  console.log(typeof books);
   return (
     <div>
       <BooksList books={books} />
@@ -17,10 +17,10 @@ const App = ({ books }) => {
 const mapStateToProps = (state) => ({ books: state.bookReducer });
 
 App.propTypes = {
-  books: PropTypes.objectOf(PropTypes.object).isRequired,
+  books: PropTypes.objectOf(PropTypes.object),
 };
 
-// App.defaultProps = {
-//   books: null,
-// };
+App.defaultProps = {
+  books: null,
+};
 export default connect(mapStateToProps)(App);
