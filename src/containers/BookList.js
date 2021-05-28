@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { deleteBook } from '../actions';
+import Book from '../components/Book';
 
 const BooksList = ({ books, deleteBook }) => {
-  const handleRemoveBook = (book) => (
-    deleteBook(book)
-  );
+  const handleRemoveBook = (book) => {
+    console.log(book);
+    deleteBook(book);
+  };
   return (
 
     <table>
@@ -22,14 +24,7 @@ const BooksList = ({ books, deleteBook }) => {
       <tbody>
         {books.bookReducer.map((book) => (
 
-          <tr key={book.id + 2}>
-            <td key={book.id}>{book.id}</td>
-            <td key={book.title}>{book.title}</td>
-            <td key={book.category}>{book.category}</td>
-            <td>
-              <button type="button" onClick={handleRemoveBook}>Remove</button>
-            </td>
-          </tr>
+          <Book key={book.id} book={book} handleRemoveBook={handleRemoveBook} />
 
         ))}
       </tbody>
