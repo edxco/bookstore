@@ -1,21 +1,37 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import uniqid from 'uniqid';
+import PropTypes from 'prop-types';
+import { createBook } from '../actions';
 
-const booksCategories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-// store title and book category
-// handle change
-// handle submit
-const BookForm = () => {
+const booksCategories = [
+  'Action',
+  'Biography',
+  'History',
+  'Horror',
+  'Kids',
+  'Learning',
+  'Sci-Fi',
+];
+
+const BookForm = ({ createNewBook }) => {
   const [data, setData] = useState({
-    id: uniqid.process(),
+    id: uniqid(),
     title: '',
     category: '',
   });
 
   const handleChange = ({ target }) => {
     setData((oldData) => ({
-      ...oldData, [target.name]: target.value,
+      ...oldData,
+      [target.name]: target.value,
     }));
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log(data);
+    createNewBook(data);
   };
 
   return (
@@ -28,7 +44,12 @@ const BookForm = () => {
 
         <label htmlFor="options">
           Title
-          <select onChange={handleChange} name="category" id="options" value={data.category}>
+          <select
+            onChange={handleChange}
+            name="category"
+            id="options"
+            value={data.category}
+          >
             <option value="" disabled>
               Select Category
             </option>
@@ -39,10 +60,18 @@ const BookForm = () => {
             ))}
           </select>
         </label>
-        <input type="submit" value="New book" />
+        <input onClick={(e) => handleClick(e)} type="submit" value="New book" />
       </form>
     </div>
   );
 };
 
-export default BookForm;
+BookForm.propTypes = {
+  createNewBook: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  createNewBook: (data) => dispatch(createBook(data)),
+});
+
+export default connect(null, mapDispatchToProps)(BookForm);
