@@ -30,8 +30,12 @@ const BookForm = ({ createNewBook }) => {
 
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(data);
     createNewBook(data);
+    setData({
+      id: uniqid.process(),
+      title: '',
+      category: '',
+    });
   };
 
   return (
@@ -39,7 +43,7 @@ const BookForm = ({ createNewBook }) => {
       <form>
         <label htmlFor="title">
           Title
-          <input onChange={handleChange} id="title" name="title" type="text" />
+          <input value={data.title} onChange={handleChange} id="title" name="title" type="text" />
         </label>
 
         <label htmlFor="options">
