@@ -14,4 +14,4 @@ export const changeFilter = (category) => ({
   type: 'CHANGE_FILTER',
   payload:
     category,
-})
+});
