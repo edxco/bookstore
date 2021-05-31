@@ -14,14 +14,10 @@ const BooksList = ({
   const handleFilterChange = (category) => {
     changeFilter(category);
   };
-  console.log(typeof books);
   const selectedCategory = () => {
     if (books.filtered !== 'All') {
-      console.log(booksFiltered);
-      console.log(
-        books.book.map(
-          (book) => book.category.toLowerCase() === booksFiltered.toLowerCase(),
-        ),
+      books.book.map(
+        (book) => book.category.toLowerCase() === booksFiltered.toLowerCase(),
       );
       return books.book.filter((book) => book.category === booksFiltered);
     }
