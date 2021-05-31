@@ -20,8 +20,8 @@ const BookForm = ({ createNewBook }) => {
     title: '',
     category: '',
     author: '',
-    totalChapter: 0,
-    chapter: 0,
+    totalChapter: '',
+    chapter: '',
   });
 
   const handleChange = ({ target }) => {
@@ -39,8 +39,8 @@ const BookForm = ({ createNewBook }) => {
       title: '',
       category: '',
       author: '',
-      totalChapter: 0,
-      chapter: 0,
+      totalChapter: '',
+      chapter: '',
     });
   };
 
@@ -50,41 +50,43 @@ const BookForm = ({ createNewBook }) => {
       <div className="has-text-weight-bold has-text-grey mb-2">
         ADD NEW BOOK
       </div>
-      <form className="columns is-align-items-center">
-        <div className="column is-one-third is-justify-content-center is-flex">
-          <input
-            className="input"
-            value={data.title}
-            onChange={handleChange}
-            id="title"
-            name="title"
-            type="text"
-            placeholder="Book title"
-          />
-        </div>
+      <form>
+        <div className="columns is-align-items-center">
+          <div className="column is-one-third is-justify-content-center is-flex">
+            <input
+              className="input"
+              value={data.title}
+              onChange={handleChange}
+              id="title"
+              name="title"
+              type="text"
+              placeholder="Book title"
+            />
+          </div>
 
-        <div className="column is-one-third is-justify-content-center is-flex">
-          <input
-            className="input"
-            value={data.author}
-            onChange={handleChange}
-            id="title"
-            name="title"
-            type="text"
-            placeholder="Book title"
-          />
-        </div>
+          <div className="column is-one-third is-justify-content-center is-flex">
+            <input
+              className="input"
+              value={data.author}
+              onChange={handleChange}
+              id="author"
+              name="author"
+              type="text"
+              placeholder="Book Author"
+            />
+          </div>
 
-        <div className="column is-one-third is-justify-content-center is-flex">
-          <input
-            className="input"
-            value={data.totalChapter}
-            onChange={handleChange}
-            id="title"
-            name="title"
-            type="text"
-            placeholder="Book title"
-          />
+          <div className="column is-one-third is-justify-content-center is-flex">
+            <input
+              className="input"
+              value={data.totalChapter}
+              onChange={handleChange}
+              id="totalChapter"
+              name="totalChapter"
+              type="number"
+              placeholder="Book Total Chapter"
+            />
+          </div>
         </div>
 
         <div className="column is-one-third is-justify-content-center is-flex">
@@ -92,10 +94,10 @@ const BookForm = ({ createNewBook }) => {
             className="input"
             value={data.chapter}
             onChange={handleChange}
-            id="title"
-            name="title"
-            type="text"
-            placeholder="Book title"
+            id="chapter"
+            name="chapter"
+            type="number"
+            placeholder="No. of Chapters Completed"
           />
         </div>
 
@@ -119,9 +121,13 @@ const BookForm = ({ createNewBook }) => {
         </div>
 
         <div className="column is-one-third is-justify-content-center is-flex">
-          <input className="button is-info" onClick={(e) => handleClick(e)} type="submit" value="New book" />
+          <input
+            className="button is-info"
+            onClick={(e) => handleClick(e)}
+            type="submit"
+            value="New book"
+          />
         </div>
-
       </form>
     </div>
   );
