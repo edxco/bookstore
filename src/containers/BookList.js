@@ -5,17 +5,32 @@ import { deleteBook, changeFilter } from '../actions';
 import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
 
-const BooksList = ({ books, deleteBook }) => {
+const BooksList = ({
+  books, deleteBook, booksFiltered, changeFilter,
+}) => {
   const handleRemoveBook = (book) => {
     deleteBook(book);
   };
   const handleFilterChange = (category) => {
     changeFilter(category);
   };
+  console.log(typeof books);
+  const selectedCategory = () => {
+    if (books.filtered !== 'All') {
+      console.log(booksFiltered);
+      console.log(
+        books.book.map(
+          (book) => book.category.toLowerCase() === booksFiltered.toLowerCase(),
+        ),
+      );
+      return books.book.filter((book) => book.category === booksFiltered);
+    }
+    return books.book;
+  };
+
   return (
     <>
       <table>
-
         <thead>
           <tr>
             <th>Book Id</th>
@@ -25,10 +40,12 @@ const BooksList = ({ books, deleteBook }) => {
           </tr>
         </thead>
         <tbody>
-          {books.bookReducer.map((book) => (
-
-            <Book key={book.id} book={book} handleRemoveBook={handleRemoveBook} />
-
+          {selectedCategory().map((book) => (
+            <Book
+              key={book.id}
+              book={book}
+              handleRemoveBook={handleRemoveBook}
+            />
           ))}
         </tbody>
 
@@ -39,11 +56,18 @@ const BooksList = ({ books, deleteBook }) => {
   );
 };
 
-const mapStateToProps = (state) => ({ books: state });
+const mapStateToProps = (state) => ({
+  books: state,
+  booksFiltered: state.filtered,
+});
 
 BooksList.propTypes = {
-  books: PropTypes.objectOf(PropTypes.array).isRequired,
+  books: PropTypes.objectOf(Object).isRequired,
   deleteBook: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
+  booksFiltered: PropTypes.string.isRequired,
 };
 
-export default connect(mapStateToProps, { deleteBook })(BooksList);
+export default connect(mapStateToProps, { deleteBook, changeFilter })(
+  BooksList,
+);

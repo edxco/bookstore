@@ -1,10 +1,8 @@
 const filterReducer = (option = 'All', action) => {
-  switch (action.type) {
-    case ('CHANGE_FILTER'):
-      return action.payload;
-    default:
-      return option;
+  if (action.type === 'CHANGE_FILTER') {
+    return action.payload;
   }
+  return option;
 };
 
 export default filterReducer;
