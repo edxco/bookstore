@@ -39,7 +39,7 @@ const BookForm = ({ createNewBook }) => {
   };
 
   return (
-    <div>
+    <div className="container m-6">
       <form>
         <label htmlFor="title">
           Title

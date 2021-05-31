@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { booksCategories } from '../containers/BookForm';
 
 const CategoryFilter = ({ selection }) => (
-  <div>
-    <select name="category" id="filterCategory" onChange={(e) => selection(e.target.value)}>
+  <>
+    <select className="select " name="category" id="filterCategory" onChange={(e) => selection(e.target.value)}>
       <option value="" disabled>
         Filter Category
       </option>
@@ -14,7 +14,7 @@ const CategoryFilter = ({ selection }) => (
         </option>
       ))}
     </select>
-  </div>
+  </>
 );
 CategoryFilter.propTypes = {
   selection: PropTypes.func.isRequired,
