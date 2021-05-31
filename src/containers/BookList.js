@@ -1,14 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { deleteBook } from '../actions';
+import { deleteBook, changeFilter } from '../actions';
 import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
 
 const BooksList = ({ books, deleteBook }) => {
   const handleRemoveBook = (book) => {
-    console.log(book);
     deleteBook(book);
+  };
+  const handleFilterChange = (category) => {
+    changeFilter(category);
   };
   return (
     <>
@@ -32,7 +34,7 @@ const BooksList = ({ books, deleteBook }) => {
 
         <tbody />
       </table>
-      <CategoryFilter />
+      <CategoryFilter selection={handleFilterChange} />
     </>
   );
 };

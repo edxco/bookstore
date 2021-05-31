@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { booksCategories } from '../containers/BookForm';
 
-const CategoryFilter = () => (
+const CategoryFilter = ({ selection }) => (
   <div>
     <select name="category" id="filterCategory">
       {console.log(booksCategories)}
@@ -16,5 +17,7 @@ const CategoryFilter = () => (
     </select>
   </div>
 );
-
+CategoryFilter.propTypes = {
+  selection: PropTypes.func.isRequired,
+};
 export default CategoryFilter;
