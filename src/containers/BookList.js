@@ -25,15 +25,14 @@ const BooksList = ({
   };
 
   return (
-
     <>
       <nav className="navbar container">
         <div className="navbar-brand">
-          <a className="navbar-item" href="https://bulma.io">
-            BOOK STORE
+          <a className="navbar-item has-text-info has-text-weight-bold is-size-4" href="https://nameless-dusk-00402.herokuapp.com/">
+            BOOKSTORE CMS
           </a>
         </div>
-        <div className="navbar-menu">
+        <div className="navbar-menu is-active">
           <div className="navbar-start">
             <div className="navbar-item">
               <a href="#!">Books</a>
@@ -42,23 +41,15 @@ const BooksList = ({
               <CategoryFilter selection={handleFilterChange} />
             </div>
           </div>
-          <div className="navbar-end">
-            l
-          </div>
+          <div className="navbar-end">l</div>
         </div>
       </nav>
 
       <div className="container card">
         {selectedCategory().map((book) => (
-
-          <Book
-            key={book.id}
-            book={book}
-            handleRemoveBook={handleRemoveBook}
-          />
+          <Book key={book.id} book={book} handleRemoveBook={handleRemoveBook} />
         ))}
       </div>
-
     </>
   );
 };
