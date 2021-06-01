@@ -45,11 +45,11 @@ const Book = ({ book, handleRemoveBook }) => {
           >
             <CircularProgressbarWithChildren value={percentage} />
           </div>
-          <div>
-            <div style={{ color: 'rgba(62, 152, 199)' }}>
+          <div className="pb-6 mx-6 is-flex is-justify-content-center is-flex-direction-column">
+            <h1 className="is-size-3 has-text-black">
               {`${percentage}% `}
-            </div>
-            <div style={{ fontSize: 10, marginTop: -5 }}>Completed</div>
+            </h1>
+            <div className="is-size-5">Completed</div>
           </div>
         </div>
         <div className="column is-family-monospace">
