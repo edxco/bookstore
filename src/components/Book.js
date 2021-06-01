@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { CircularProgressbar } from 'react-circular-progressbar';
+import { CircularProgressbarWithChildren } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 const Book = ({ book, handleRemoveBook }) => {
@@ -36,7 +36,15 @@ const Book = ({ book, handleRemoveBook }) => {
         </div>
         <div className="column has-text-weight-light has-text-grey">
           <div style={{ width: 75, height: 75 }} className="is-size-6 has-text-weight-light has-text-grey is-uppercase">
-            <CircularProgressbar maxValue={1} value={percentage} text={`${percentage * 100}%`} />
+            <CircularProgressbarWithChildren maxValue={1} value={percentage}>
+              <div style={{ color: 'rgba(62, 152, 199)' }}>
+                {`${percentage * 100}% `}
+              </div>
+              <div style={{ fontSize: 10, marginTop: -5 }}>
+
+                Completed
+              </div>
+            </CircularProgressbarWithChildren>
             ;
           </div>
         </div>
