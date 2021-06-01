@@ -9,7 +9,7 @@ And you will see this info and your percentage progress.
 
 ## Live demo
 
-[demo](https://dashboard.heroku.com/apps/nameless-dusk-00402)
+[demo](https://nameless-dusk-00402.herokuapp.com/)
 # Getting Started with Create React App
 
 ## Built with
