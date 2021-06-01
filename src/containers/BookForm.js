@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import uniqid from 'uniqid';
 import PropTypes from 'prop-types';
+import faker from 'faker';
 import { createBook } from '../actions';
 
 export const booksCategories = [
@@ -19,9 +20,9 @@ const BookForm = ({ createNewBook }) => {
     id: uniqid(),
     title: '',
     category: '',
-    author: '',
-    totalChapter: '',
-    chapter: '',
+    author: faker.fake('{{name.lastName}}, {{name.firstName}} {{name.suffix}}'),
+    totalChapter: Math.floor(Math.random() * 50) + 20,
+    chapter: Math.floor(Math.random() * 20) + 1,
   });
 
   const handleChange = ({ target }) => {
@@ -38,9 +39,7 @@ const BookForm = ({ createNewBook }) => {
       id: uniqid.process(),
       title: '',
       category: '',
-      author: '',
-      totalChapter: '',
-      chapter: '',
+
     });
   };
 
@@ -61,44 +60,6 @@ const BookForm = ({ createNewBook }) => {
               name="title"
               type="text"
               placeholder="Book title"
-            />
-          </div>
-
-          <div className="column is-one-third is-justify-content-center is-flex">
-            <input
-              className="input"
-              value={data.author}
-              onChange={handleChange}
-              id="author"
-              name="author"
-              type="text"
-              placeholder="Book Author"
-            />
-          </div>
-
-          <div className="column is-one-third is-justify-content-center is-flex">
-            <input
-              className="input"
-              value={data.totalChapter}
-              onChange={handleChange}
-              id="totalChapter"
-              name="totalChapter"
-              type="number"
-              placeholder="Book Total Chapter"
-            />
-          </div>
-        </div>
-
-        <div className="columns is-align-items-center">
-          <div className="column is-one-third is-justify-content-center is-flex">
-            <input
-              className="input"
-              value={data.chapter}
-              onChange={handleChange}
-              id="chapter"
-              name="chapter"
-              type="number"
-              placeholder="No. of Chapters Completed"
             />
           </div>
 
