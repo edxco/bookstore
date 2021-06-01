@@ -7,6 +7,7 @@ const App = () => (
   <div className="has-background-light">
     <BooksList />
     <BooksForm />
+    <footer className="py-6 my-6" />
   </div>
 );
 

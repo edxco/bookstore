@@ -103,22 +103,23 @@ const BookForm = ({ createNewBook }) => {
           </div>
 
           <div className="column is-one-third is-justify-content-center is-flex">
-            <select
-              className="select"
-              onChange={handleChange}
-              name="category"
-              id="options"
-              value={data.category}
-            >
-              <option value="" disabled>
-                Select Category
-              </option>
-              {booksCategories.map((category) => (
-                <option value={category} key={category}>
-                  {category}
+            <div className="select  is-fullwidth">
+              <select
+                onChange={handleChange}
+                name="category"
+                id="options"
+                value={data.category}
+              >
+                <option value="" disabled>
+                  Select Category
                 </option>
-              ))}
-            </select>
+                {booksCategories.map((category) => (
+                  <option value={category} key={category}>
+                    {category}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
           <div className="column is-one-third is-justify-content-center is-flex">

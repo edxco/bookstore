@@ -38,7 +38,9 @@ const BooksList = ({
               <a href="#!">Books</a>
             </div>
             <div className="navbar-item">
-              <CategoryFilter selection={handleFilterChange} />
+              <div className="select">
+                <CategoryFilter selection={handleFilterChange} />
+              </div>
             </div>
           </div>
           <div className="navbar-end">
