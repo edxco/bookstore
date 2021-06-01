@@ -1,6 +1,10 @@
 ## Bookstore
 This is a front-end application that will help organize and manage a bookstore. this app is  fast, dynamic and responsive is built with React & Redux.
 
+You are able to create book registers, with: the title, author, category, number of chapters of the book and your current progress.
+
+And you will see this info and your percentage progress.
+
 ![screenshot](./public/images/screenshot.jpeg)
 
 ## Live demo
