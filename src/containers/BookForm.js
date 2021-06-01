@@ -89,44 +89,46 @@ const BookForm = ({ createNewBook }) => {
           </div>
         </div>
 
-        <div className="column is-one-third is-justify-content-center is-flex">
-          <input
-            className="input"
-            value={data.chapter}
-            onChange={handleChange}
-            id="chapter"
-            name="chapter"
-            type="number"
-            placeholder="No. of Chapters Completed"
-          />
-        </div>
+        <div className="columns is-align-items-center">
+          <div className="column is-one-third is-justify-content-center is-flex">
+            <input
+              className="input"
+              value={data.chapter}
+              onChange={handleChange}
+              id="chapter"
+              name="chapter"
+              type="number"
+              placeholder="No. of Chapters Completed"
+            />
+          </div>
 
-        <div className="column is-one-third is-justify-content-center is-flex">
-          <select
-            className="select"
-            onChange={handleChange}
-            name="category"
-            id="options"
-            value={data.category}
-          >
-            <option value="" disabled>
-              Select Category
-            </option>
-            {booksCategories.map((category) => (
-              <option value={category} key={category}>
-                {category}
+          <div className="column is-one-third is-justify-content-center is-flex">
+            <select
+              className="select"
+              onChange={handleChange}
+              name="category"
+              id="options"
+              value={data.category}
+            >
+              <option value="" disabled>
+                Select Category
               </option>
-            ))}
-          </select>
-        </div>
+              {booksCategories.map((category) => (
+                <option value={category} key={category}>
+                  {category}
+                </option>
+              ))}
+            </select>
+          </div>
 
-        <div className="column is-one-third is-justify-content-center is-flex">
-          <input
-            className="button is-info"
-            onClick={(e) => handleClick(e)}
-            type="submit"
-            value="New book"
-          />
+          <div className="column is-one-third is-justify-content-center is-flex">
+            <input
+              className="button is-info"
+              onClick={(e) => handleClick(e)}
+              type="submit"
+              value="New book"
+            />
+          </div>
         </div>
       </form>
     </div>

@@ -26,9 +26,9 @@ const BooksList = ({
 
   return (
     <>
-      <nav className="navbar container">
+      <nav className="navbar px-6">
         <div className="navbar-brand">
-          <a className="navbar-item has-text-info has-text-weight-bold is-size-4" href="https://nameless-dusk-00402.herokuapp.com/">
+          <a className="navbar-item has-text-info has-text-weight-bold is-size-4" href="/">
             BOOKSTORE CMS
           </a>
         </div>
@@ -41,11 +41,17 @@ const BooksList = ({
               <CategoryFilter selection={handleFilterChange} />
             </div>
           </div>
-          <div className="navbar-end">l</div>
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <a href="#!" className="icon has-text-info is-large">
+                <i className="fas fa-2x fa-user-circle" />
+              </a>
+            </div>
+          </div>
         </div>
       </nav>
 
-      <div className="container card">
+      <div className="container card has-background-light">
         {selectedCategory().map((book) => (
           <Book key={book.id} book={book} handleRemoveBook={handleRemoveBook} />
         ))}
